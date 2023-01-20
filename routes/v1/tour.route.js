@@ -5,7 +5,7 @@ const tourController = require("../../controllers/tour.controller");
 
 router
     .route("/tours")
-    .get(tourController.getTour) // get all tours
+    .get(tourController.getTour) // get all tours || tours?page=2&limit=5 || tours?fields=name,price || tours?sort=price
     .post(tourController.createTour); // create tours
 
 
