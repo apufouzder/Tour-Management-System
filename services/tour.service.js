@@ -14,9 +14,9 @@ exports.getTourService = async (filters, queries) => {
     .limit(queries.limit)
     .skip(queries.skip);
 
-  const pageCount = await Tour.countDocuments(filters);
-
-  return { pageCount, tour };
+  const totalTour = await Tour.countDocuments(filters);
+  const pageCount = Math.ceil(totalTour / queries.limit)
+  return { totalTour, pageCount, tour };
 };
 
 exports.incTourViewService = async (id) => {

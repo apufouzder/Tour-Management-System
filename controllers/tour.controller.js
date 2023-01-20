@@ -38,8 +38,8 @@ exports.getTour = async (req, res, next) => {
     }
 
     if (req.query.sort) {
-      const sortBy = req.query.sort.split(",").join(" ");
-      queries.sortBy = sortBy;
+      const sort = req.query.sort.split(",").join(" ");
+      queries.sort = sort;
       console.log(queries);
     }
 
